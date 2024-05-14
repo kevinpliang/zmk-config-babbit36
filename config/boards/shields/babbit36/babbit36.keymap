@@ -8,7 +8,17 @@
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
-&lt { quick_tap_ms = <200>; };
+&mt {
+    tapping-term-ms = <300>;
+    quick-tap-ms = <300>;
+    flavor = "balanced";
+};
+
+&lt {
+    tapping-term-ms = <300>;
+    quick-tap-ms = <300>;
+    flavor = "balanced";
+};
 
 / {
     behaviors {
