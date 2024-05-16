@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define RAISE_L 1
 #define LOWER_L 2
@@ -75,6 +76,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
         };
+
+        shutdownf9: shutdownf9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHUTDOWNF9";
+            bindings = <&kp F9>, <&soft_off>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        outf12: outf12 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "OUTF12";
+            bindings = <&kp F12>, <&out OUT_TOG>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
     };
 
     keymap {
@@ -104,7 +123,7 @@
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
 &trans        &kp F1        &kp F2        &btsel0f3     &btsel1f4     &btsel2f5     &btclrf6      &kp HOME      &kp END       &trans
-&trans        &kp F7        &kp F8        &kp F9        &resetf10     &bootf11      &kp F12       &kp CAPSLOCK  &kp DELETE    &trans
+&trans        &kp F7        &kp F8        &shutdownf9   &resetf10     &bootf11      &outf12       &kp CAPSLOCK  &kp DELETE    &trans
                             &trans        &trans        &trans        &trans        &trans        &trans
             >;
 
