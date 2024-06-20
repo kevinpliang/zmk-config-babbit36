@@ -96,6 +96,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <19 35>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -112,8 +121,8 @@
         num {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-&trans        &kp F1        &kp F2        &btsel0f3     &btsel1f4     &btsel2f5     &btclrf6      &kp HOME      &kp END       &trans
-&trans        &kp F7        &kp F8        &shutdownf9   &resetf10     &bootf11      &outf12       &kp CAPSLOCK  &kp DELETE    &trans
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp BACKSPACE
+&kp F10       &kp F11       &kp F12       &none         &none         &none         &none         &none         &none         &kp DELETE
                             &trans        &trans        &trans        &trans        &trans        &trans
             >;
 
@@ -123,10 +132,10 @@
         etc {
             label = "etc";
             bindings = <
-&kp GRAVE  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&trans     &trans  &trans  &trans  &trans  &kp LEFT   &kp DOWN          &kp UP            &kp RIGHT          &trans
-&trans     &trans  &trans  &trans  &trans  &kp SEMI   &kp SINGLE_QUOTE  &kp C_VOL_DN      &kp C_VOL_UP       &trans
-                   &trans  &trans  &trans  &trans     &trans            &trans
+&kp GRAVE   &trans             &trans           &trans                &trans                &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none      &none      &kp UP            &kp SEMI           &kp SINGLE_QUOTE
+&trans      &trans             &trans           &trans                &trans                &none      &kp LEFT   &kp DOWN          &kp RIGHT          &kp SLASH
+                               &kp LEFT_WIN     &trans                &trans                &trans     &trans     &trans
             >;
         };
     };
