@@ -105,6 +105,15 @@
         };
     };
 
+    macros {
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp TAB>;
+            label = "ALT_TAB";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -122,7 +131,7 @@
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &kp F7        &kp F8        &kp F9        &kp BACKSPACE
-&kp F10       &kp F11       &kp F12       &none         &none         &none         &none         &none         &none         &kp DELETE
+&alt_tab      &none         &none         &none         &none         &none         &kp F10       &kp F11       &kp F12       &kp DELETE
                             &trans        &trans        &trans        &trans        &trans        &trans
             >;
 
@@ -134,8 +143,17 @@
             bindings = <
 &kp GRAVE   &trans             &trans           &trans                &trans                &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
 &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none      &none      &kp UP            &kp SEMI           &kp SINGLE_QUOTE
-&trans      &trans             &trans           &trans                &trans                &none      &kp LEFT   &kp DOWN          &kp RIGHT          &kp SLASH
+&kp TAB     &trans             &trans           &trans                &trans                &none      &kp LEFT   &kp DOWN          &kp RIGHT          &kp SLASH
                                &kp LEFT_WIN     &trans                &trans                &trans     &trans     &trans
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
